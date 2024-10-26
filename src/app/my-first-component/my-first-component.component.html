@@ -1,3 +1,16 @@
 <p>my-first-component works!</p>
 
 <h1>Olá, turma!</h1>
+
+<h2>Olá, {{ name }}</h2>
+
+<p [ngClass]="{bgGreen: showSuccessMessage === true}">Pagamento aprovado!</p>
+<p *ngIf="showSuccessMessage">Formulário preenchido com sucesso!</p>
+
+<p [ngStyle]="{backgroundColor: 'red'}">Este parágrafo é vermelho!</p>
+
+<div *ngFor="let item of items">
+    <p>Nome: {{item.name}} </p>
+    <p>CPF: {{ item.cpf }} </p>
+    <p>Desconto: {{ item.value * fator }}%</p>
+</div>
