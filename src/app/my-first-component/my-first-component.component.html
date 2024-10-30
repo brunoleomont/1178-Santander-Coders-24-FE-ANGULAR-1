@@ -1,16 +1,24 @@
-<p>my-first-component works!</p>
-
 <h1>Olá, turma!</h1>
 
-<h2>Olá, {{ name }}</h2>
+<!-- <h2>Olá, {{ name }}</h2> -->
 
-<p [ngClass]="{bgGreen: showSuccessMessage === true}">Pagamento aprovado!</p>
+<!-- <p [ngClass]="{bgGreen: showSuccessMessage === true}">Pagamento aprovado!</p>
 <p *ngIf="showSuccessMessage">Formulário preenchido com sucesso!</p>
 
-<p [ngStyle]="{backgroundColor: 'red'}">Este parágrafo é vermelho!</p>
-
-<div *ngFor="let item of items">
-    <p>Nome: {{item.name}} </p>
-    <p>CPF: {{ item.cpf }} </p>
-    <p>Desconto: {{ item.value * fator }}%</p>
+<p [ngStyle]="{backgroundColor: 'red'}">Este parágrafo é vermelho!</p> -->
+<button (click)="onClickButton()">{{ enableTitle }}</button>
+<div *ngIf="enableButton">
+    <div *ngFor="let item of items">
+        <h3>Pessoa</h3>
+        <p>Nome: {{item.name}} </p>
+        <p>CPF: {{ item.cpf }} </p>
+        <p>Desconto: {{ item.value * fator }}%</p>
+        <button [disabled]="!(item.value * fator >= 15)">Pode Emprestar</button>
+    </div>
 </div>
+<br>
+<input type="text" [(ngModel)]="randomText">
+
+<p>Texto sendo alterado: {{randomText}}</p>
+
+<button (click)="changeText()">Alterar texto</button>
