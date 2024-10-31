@@ -1,0 +1,32 @@
+<h2>Reactive Forms</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username"
+            formControlName="username">
+        <div *ngIf="username!.invalid" class="alert">
+            <div *ngIf="username!.errors?.['required']">
+                Username é obrigatório
+            </div>
+            <div *ngIf="username!.errors?.['minlength']">
+                Username deve ter no mínimo 3 caracteres
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email"
+            formControlName="email">
+    </div>
+    <div *ngIf="email!.invalid" class="alert">
+        <div *ngIf="email!.errors?.['required']">
+            Email é obrigatório
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" name="country" id="country"
+            formControlName="country">
+    </div>
+    <button type="submit">Enviar Reactive Forms</button>
+</form>

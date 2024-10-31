@@ -1,7 +1,16 @@
 <p>parent works!</p>
 
 <!-- <app-child [parentTitle]="title"></app-child> -->
+<p>Lista de Parents:</p>
 
-<div *ngFor="let name of parentNames">
-    <app-child [parentName]="name"></app-child>
+<div *ngIf="parentNames.length > 0">
+    <div *ngFor="let name of parentNames">
+        <app-child [parentName]="name"></app-child>
+    </div>
 </div>
+<div *ngIf="parentNames.length == 0">
+    <p>Lista de parents vazia</p>
+</div>
+
+<app-child2 (itemChild)="newItemReceived($event)"></app-child2>
+<p>Texto recebido: {{textReceived}}</p>
