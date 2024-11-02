@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ChildComponent } from "../child/child.component";
 import { NgFor, NgIf } from '@angular/common';
 import { Child2Component } from "../child2/child2.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-parent',
   standalone: true,
-  imports: [ChildComponent, NgFor, NgIf, Child2Component],
+  imports: [ChildComponent, NgFor, NgIf, Child2Component, RouterLink],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.css'
 })

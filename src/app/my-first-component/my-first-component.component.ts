@@ -1,11 +1,12 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'my-first-component',
   standalone: true,
-  imports: [NgClass, NgStyle, NgFor, NgIf, FormsModule],
+  imports: [NgClass, NgStyle, NgFor, NgIf, FormsModule, RouterLink],
   templateUrl: './my-first-component.component.html',
   styleUrl: './my-first-component.component.css'
 })
@@ -13,7 +14,7 @@ export class MyFirstComponentComponent {
 
   title = "My First Component #1178";
 
-  name = "Bruno";
+  name!: string;
 
   showSuccessMessage = false;
 
@@ -28,6 +29,12 @@ export class MyFirstComponentComponent {
   // Event Binding
   enableButton = false;
   enableTitle = "Exibir Pessoas";
+
+  constructor(private route: ActivatedRoute){}
+
+  ngOnInit() {
+    this.name = this.route.snapshot.params['name'] != undefined ? this.route.snapshot.params['name'] : 'User';
+  }
 
   onClickButton() {
     this.enableButton = !this.enableButton;

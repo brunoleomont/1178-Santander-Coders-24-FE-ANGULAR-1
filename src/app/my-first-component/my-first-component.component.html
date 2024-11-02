@@ -1,6 +1,7 @@
-<h1>Olá, turma!</h1>
+<!-- <h1>Olá, turma!</h1> -->
 
-<!-- <h2>Olá, {{ name }}</h2> -->
+<h2>My First Component</h2>
+<h2>Olá, {{ name }}</h2>
 
 <!-- <p [ngClass]="{bgGreen: showSuccessMessage === true}">Pagamento aprovado!</p>
 <p *ngIf="showSuccessMessage">Formulário preenchido com sucesso!</p>
@@ -22,3 +23,7 @@
 <p>Texto sendo alterado: {{randomText}}</p>
 
 <button (click)="changeText()">Alterar texto</button>
+
+<p><a [routerLink]="['/parent']">Ir para Parent Component</a></p>
+<p><a [routerLink]="['/reactive']">Ir para Reactive Forms Component</a></p>
+<p><a [routerLink]="['/template']">Ir para Template Driven Component</a></p>

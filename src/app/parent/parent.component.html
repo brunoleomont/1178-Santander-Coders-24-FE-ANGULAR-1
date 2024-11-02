@@ -14,3 +14,6 @@
 
 <app-child2 (itemChild)="newItemReceived($event)"></app-child2>
 <p>Texto recebido: {{textReceived}}</p>
+
+
+<p><a [routerLink]="['/my-first', textReceived]">Ir para My First</a></p>
