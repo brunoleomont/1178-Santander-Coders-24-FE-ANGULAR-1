@@ -13,4 +13,9 @@ describe('LocalStorageService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should handle setting item with numeric value', () => {
+    service.setItem('testKey', '12345');
+    expect(service.getItem('testKey')).toEqual('12345');
+  });
 });

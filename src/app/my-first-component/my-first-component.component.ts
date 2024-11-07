@@ -2,7 +2,7 @@ import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { GramasTransformPipe } from '../gramas-transform.pipe';
+import { GramasTransformPipe } from '../pipes/gramas-transform.pipe';
 import { LocalStorageService } from '../utils/local-storage.service';
 
 @Component({
@@ -60,5 +60,4 @@ export class MyFirstComponentComponent {
   deleteItems() {
     this.localStorageService.removeItem('items');
   }
-
 }

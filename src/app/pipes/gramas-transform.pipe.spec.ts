@@ -1,4 +1,5 @@
-import { GramasTransformPipe } from './gramas-transform.pipe';
+import { GramasTransformPipe } from "./gramas-transform.pipe";
+
 
 describe('GramasTransformPipe', () => {
   it('create an instance', () => {
